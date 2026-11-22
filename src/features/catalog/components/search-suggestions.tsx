@@ -33,7 +33,10 @@ export function SearchSuggestions({ defaultValue, inputClassName }: SearchSugges
         const response = await fetch(`/api/products/suggest?q=${encodeURIComponent(keyword)}`, {
           signal: controller.signal,
         });
-        if (!response.ok) return;
+        if (!response.ok) {
+          setSuggestions(null);
+          return;
+        }
         const body = (await response.json()) as { suggestions: Suggestion[] };
         setSuggestions(body.suggestions);
         setActive(-1);
@@ -79,6 +82,8 @@ export function SearchSuggestions({ defaultValue, inputClassName }: SearchSugges
         value={value}
         onChange={(event) => {
           setValue(event.target.value);
+          // Từ khóa ngắn lại: bỏ danh sách của từ khóa trước, không hiện kết quả cũ cho từ khóa mới.
+          if (event.target.value.trim().length < MIN_QUERY_LENGTH) setSuggestions(null);
           setOpen(true);
         }}
         onKeyDown={handleKeyDown}
@@ -119,7 +124,14 @@ export function SearchSuggestions({ defaultValue, inputClassName }: SearchSugges
                 )}
               >
                 <span className="text-slate-900">{suggestion.name}</span>
-                <span className="shrink-0 text-slate-500">{formatCurrency(suggestion.price)}</span>
+                <span className="flex shrink-0 items-center gap-2 text-slate-500">
+                  {!suggestion.inStock && (
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+                      Hết hàng
+                    </span>
+                  )}
+                  {formatCurrency(suggestion.price)}
+                </span>
               </li>
             ))
           )}

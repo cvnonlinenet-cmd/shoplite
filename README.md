@@ -55,7 +55,7 @@ Mở <http://localhost:3000>.
 ```text
 src/
 ├── app/                    # Routes (App Router) - chỉ chứa trang và API, logic nằm ở features/
-│   ├── api/                # Route Handlers: /api/products, /api/orders
+│   ├── api/                # Route Handlers: /api/products, /api/products/suggest, /api/orders
 │   ├── products/ cart/ checkout/ orders/
 │   └── layout.tsx
 ├── features/               # Mỗi thư mục là một tính năng: logic + component + test
@@ -79,14 +79,15 @@ storage/                    # (tự tạo khi chạy) orders.json - đã đượ
 
 ## API
 
-| Method  | Endpoint              | Mô tả                                                                             |
-| ------- | --------------------- | --------------------------------------------------------------------------------- |
-| `GET`   | `/api/products`       | Danh sách sản phẩm. Query: `q, category, minPrice, maxPrice, inStock, sort, page` |
-| `GET`   | `/api/products/:slug` | Chi tiết sản phẩm                                                                 |
-| `GET`   | `/api/orders`         | Danh sách đơn hàng                                                                |
-| `POST`  | `/api/orders`         | Tạo đơn hàng                                                                      |
-| `GET`   | `/api/orders/:id`     | Chi tiết đơn hàng                                                                 |
-| `PATCH` | `/api/orders/:id`     | Hủy đơn: `{ "status": "cancelled" }`                                              |
+| Method  | Endpoint                | Mô tả                                                                                   |
+| ------- | ----------------------- | --------------------------------------------------------------------------------------- |
+| `GET`   | `/api/products`         | Danh sách sản phẩm. Query: `q, category, minPrice, maxPrice, inStock, sort, page`       |
+| `GET`   | `/api/products/:slug`   | Chi tiết sản phẩm                                                                       |
+| `GET`   | `/api/products/suggest` | Gợi ý khi gõ: `q` 2–50 ký tự, tối đa 5 `{ slug, name, price, inStock }`, còn hàng trước |
+| `GET`   | `/api/orders`           | Danh sách đơn hàng                                                                      |
+| `POST`  | `/api/orders`           | Tạo đơn hàng                                                                            |
+| `GET`   | `/api/orders/:id`       | Chi tiết đơn hàng                                                                       |
+| `PATCH` | `/api/orders/:id`       | Hủy đơn: `{ "status": "cancelled" }`                                                    |
 
 Lỗi trả về dạng `{ "error": { "code": "...", "message": "...", "details": { ... } } }`.
 
