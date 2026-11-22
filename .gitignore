@@ -30,3 +30,6 @@ gate-*.log
 gate-*.json
 .ci/
 storage/
+
+# Module 8 - nhật ký công cụ của agent, không lên git
+.claude/logs/

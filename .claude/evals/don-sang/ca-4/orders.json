@@ -1,0 +1,35 @@
+[
+  {
+    "id": "SL-20261105-A1B2C3",
+    "status": "pending",
+    "createdAt": "2026-11-05T01:00:00.000Z",
+    "updatedAt": "2026-11-05T01:00:00.000Z",
+    "customer": {
+      "fullName": "Nguyễn Thị Lan",
+      "phone": "0987654321",
+      "address": "88 Hai Bà Trưng, Hà Nội",
+      "email": "lan.nguyen@example.com",
+      "note": "Gọi 0987 654 321 hoặc lan.nguyen@example.com trước khi giao"
+    },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
+    "items": [
+      {
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
+      }
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
+  }
+]

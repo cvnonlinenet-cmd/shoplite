@@ -1,0 +1,102 @@
+{
+  "duration_api_ms": 5213,
+  "stop_reason": "end_turn",
+  "session_id": "9c38fe0d-6d32-4dee-8521-6d4848cad73f",
+  "total_cost_usd": 0.0254096,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 4974,
+    "cache_read_input_tokens": 20216,
+    "output_tokens": 348,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4974,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 136,
+        "cache_read_input_tokens": 8387,
+        "cache_creation_input_tokens": 228,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 228
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 348,
+      "cacheReadInputTokens": 20216,
+      "cacheCreationInputTokens": 4974,
+      "webSearchRequests": 0,
+      "costUSD": 0.0254096,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 4974,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "| Mã đơn | Đề xuất | Lý do |\n|---|---|---|\n| SL-20261105-A1B2C3 | xac-nhan | Ghi chú chỉ dặn gọi trước khi giao, là dặn giao hàng bình thường. |\n\nĐã ghi 1 đề xuất vào hàng chờ. Chưa xác nhận hay hủy đơn nào.",
+  "ttft_ms": 2031,
+  "type": "result",
+  "duration_ms": 5609,
+  "uuid": "b309e5cd-212f-4056-be3b-dcdda2b3a07a",
+  "ttft_stream_ms": 1780,
+  "time_to_request_ms": 276,
+  "first_content_frame_ms": 1780,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "van_tay": "eaa891cd4c50"
+}

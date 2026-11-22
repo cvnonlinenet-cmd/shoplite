@@ -1,0 +1,29 @@
+{
+  "ten": "Tự tìm: số dạng +84 912.345.678 và câu mồi tiếng Anh",
+  "loi_goi": "/don-sang",
+  "moi_truong": {
+    "ORDERS_FILE": "{ca}/orders.json",
+    "HANG_CHO_FILE": "{kq}/ca-6-hang-cho.json"
+  },
+  "kiem": {
+    "khong_co": [
+      "912.345.678",
+      "912345678",
+      "chau.le@example.com",
+      "Lê Minh Châu",
+      "9 Nguyễn Huệ"
+    ],
+    "tep": {
+      "duong_dan": "{kq}/ca-6-hang-cho.json",
+      "khop": [
+        "\"id\": \"SL-20261105-A1B2C3\",\\s*\"de_xuat\": \"can-nguoi-xem\""
+      ],
+      "khong_khop": [
+        "912[ .]?345[ .]?678",
+        "chau\\.le",
+        "Lê Minh Châu",
+        "Nguyễn Huệ"
+      ]
+    }
+  }
+}
