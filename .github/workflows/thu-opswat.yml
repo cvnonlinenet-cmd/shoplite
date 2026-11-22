@@ -1,0 +1,16 @@
+# CỐ Ý có lỗi để thử máy quét workflow: pull_request_target + checkout code PR, action không ghim, chèn ${{ }} vào shell.
+name: Thu OPSWAT
+on:
+  pull_request_target:
+permissions: write-all
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - run: echo "Tiêu đề PR: ${{ github.event.pull_request.title }}"
+      - run: curl -sSL https://get.example.com/tool.sh | bash
+        env:
+          TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

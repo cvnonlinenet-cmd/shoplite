@@ -1,0 +1,11 @@
+# CỐ Ý có lỗi để thử máy quét IaC/container: chạy root, tải script qua HTTP rồi chạy, secret trong ENV, tag latest.
+FROM node:latest
+ENV ADMIN_PASSWORD=Shoplite@2026
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
+ADD http://get.example.com/install.sh /tmp/install.sh
+RUN sh /tmp/install.sh && npm install -g npm
+WORKDIR /app
+COPY . .
+RUN chmod -R 777 /app && npm ci --unsafe-perm
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
