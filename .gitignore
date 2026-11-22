@@ -28,5 +28,7 @@ test-results/
 # Module 7 - file sinh ra khi chạy gate ở máy
 gate-*.log
 gate-*.json
+gate-*.html
+gate-*.pdf
 .ci/
 storage/

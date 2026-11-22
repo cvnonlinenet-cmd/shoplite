@@ -135,6 +135,19 @@ jobs:
           name: gate-bao-mat
           path: gate-bao-mat.*
           retention-days: 3
+      # Báo cáo SAST dạng PDF (xanh hay đỏ đều có), tải ở mục Artifacts của lượt chạy.
+      - name: Báo cáo Semgrep (PDF)
+        if: always()
+        run: |
+          npx playwright install chromium
+          node scripts/ci/bao-cao-semgrep.mjs
+      - name: Tải lên báo cáo Semgrep
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: bao-cao-semgrep
+          path: gate-semgrep.*
+          retention-days: 14
 
   # ---------------------------------------------------------------------------
   # AI giải thích CI đỏ (bài 7.4). Tách hai job:
