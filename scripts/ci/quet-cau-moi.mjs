@@ -16,6 +16,7 @@ const FILE_CHI_DAN = [
   /^\.claude\//,
   /^_bmad\//,
   /^\.github\//,
+  /^\.semgrep\//,
   /^scripts\/ci\//,
   /^CLAUDE(\.local)?\.md$/,
   /^AGENTS\.md$/,

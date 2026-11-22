@@ -5,7 +5,7 @@
 //   node scripts/ci/gate.mjs lint      # ESLint (có luật BM-1, BM-2, KT-1) + TypeScript
 //   node scripts/ci/gate.mjs unit      # Vitest + sàn coverage trong vitest.config.mts
 //   node scripts/ci/gate.mjs e2e       # Playwright; test đỏ chạy lại 1 lần, chập chờn vẫn tính là đỏ
-//   node scripts/ci/gate.mjs bao-mat   # gitleaks (cả lịch sử commit) + npm audit + soát workflow + quét câu mồi
+//   node scripts/ci/gate.mjs bao-mat   # gitleaks (cả lịch sử commit) + npm audit + Semgrep (SAST) + soát workflow + quét câu mồi
 //   node scripts/ci/gate.mjs all
 //
 // Mỗi bước ghi gate-<bước>.log (toàn bộ output) và gate-<bước>.json (kết quả từng lệnh).
@@ -25,6 +25,18 @@ const BUOC = {
     // --log-opts=HEAD: quét toàn bộ lịch sử của commit đang kiểm (không quét nhánh khác trên máy).
     ["gitleaks", "gitleaks git --log-opts=HEAD --redact --no-banner --exit-code 1 ."],
     ["npm audit", "npm audit --audit-level=high"],
+    // SAST: luật của nhóm trong .semgrep/ (chạy offline) + bộ luật p/typescript, p/react của Semgrep registry.
+    // Chỉ chặn ở mức ERROR; --metrics=off để không gửi gì ra ngoài. Phiên bản ghim trong ci.yml.
+    // Tự kiểm luật của nhóm bằng fixture .semgrep/shoplite.tsx (dòng "ruleid:" phải bị bắt, "ok:" phải không):
+    // luật hỏng thì gate đỏ ngay, không âm thầm xanh.
+    [
+      "Semgrep: kiểm luật của nhóm",
+      "semgrep --test --metrics=off --config .semgrep/shoplite.yml .semgrep/shoplite.tsx",
+    ],
+    [
+      "Semgrep (SAST)",
+      "semgrep scan --config .semgrep --config p/typescript --config p/react --severity ERROR --error --metrics=off --quiet src",
+    ],
     ["Soát workflow", "node scripts/ci/kiem-tra-workflow.mjs"],
     ["Quét câu mồi", "node scripts/ci/quet-cau-moi.mjs"],
   ],
@@ -94,11 +106,15 @@ function thieuGi(command) {
   const script = command.match(/^node (scripts\/\S+)/)?.[1];
   if (script)
     return existsSync(script) ? null : { ten: `${script} (thêm ở bài 7.5)`, batBuoc: false };
-  if (!command.startsWith("gitleaks")) return null;
-  const which = process.platform === "win32" ? "where" : "which";
-  if (spawnSync(which, ["gitleaks"], { stdio: "ignore" }).status === 0) return null;
-  return {
-    ten: "gitleaks (macOS: brew install gitleaks · Windows: winget install --id Gitleaks.Gitleaks)",
-    batBuoc: true,
+  const CONG_CU = {
+    gitleaks:
+      "gitleaks (macOS: brew install gitleaks · Windows: winget install --id Gitleaks.Gitleaks)",
+    semgrep:
+      "semgrep (macOS: brew install semgrep · Linux: pipx install semgrep==1.186.0 · Windows: chạy trong WSL, Semgrep không chạy native)",
   };
+  const tool = Object.keys(CONG_CU).find((ten) => command.startsWith(ten));
+  if (!tool) return null;
+  const which = process.platform === "win32" ? "where" : "which";
+  if (spawnSync(which, [tool], { stdio: "ignore" }).status === 0) return null;
+  return { ten: CONG_CU[tool], batBuoc: true };
 }
