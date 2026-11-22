@@ -1,0 +1,72 @@
+# Luật SAST riêng của nhóm ShopLite (Semgrep), chạy trong gate `bao-mat` cùng gitleaks và npm audit.
+# Mã luật trùng mã mục trong .github/review-checklist.md. Luật của nhóm đặt severity ERROR để chặn merge;
+# bộ luật p/typescript và p/react của Semgrep registry chỉ chặn ở mức ERROR (xem scripts/ci/gate.mjs).
+# Thử ở máy: semgrep scan --config .semgrep --metrics=off src
+rules:
+  - id: shoplite.bm-1-regexp-tu-du-lieu-ngoai
+    message: >-
+      [BM-1] Không dựng RegExp từ dữ liệu bên ngoài: ký tự như ( làm server lỗi 500, mẫu như (.*.*)*! làm
+      server treo (ReDoS). Dùng includes() trên normalizeText().
+    languages: [typescript, javascript]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-1333: Inefficient Regular Expression Complexity"
+    patterns:
+      - pattern-either:
+          - pattern: new RegExp($SRC, ...)
+          - pattern: RegExp($SRC, ...)
+      - pattern-not: new RegExp("...", ...)
+      - pattern-not: RegExp("...", ...)
+    paths:
+      exclude:
+        - "*.test.ts"
+        - "*.test.tsx"
+
+  - id: shoplite.bm-2-html-tho
+    message: "[BM-2] Không chèn HTML thô vào trang (XSS). Hiển thị dạng chữ, React tự escape."
+    languages: [typescript, javascript]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-79: Cross-site Scripting"
+    pattern-either:
+      - pattern: <$EL dangerouslySetInnerHTML={$V} />
+      - pattern: <$EL dangerouslySetInnerHTML={$V}>...</$EL>
+
+  - id: shoplite.bm-5-chay-ma-dong
+    message: >-
+      [BM-5] Không chạy mã hay lệnh hệ thống dựng từ chuỗi (eval, new Function, child_process với
+      template string): dữ liệu của khách hoặc của PR thành lệnh trên server.
+    languages: [typescript, javascript]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-94: Improper Control of Generation of Code"
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+      - pattern: $CP.exec(`...${$X}...`, ...)
+      - pattern: $CP.execSync(`...${$X}...`, ...)
+      - pattern: exec(`...${$X}...`, ...)
+      - pattern: execSync(`...${$X}...`, ...)
+
+  - id: shoplite.kt-1-doc-ghi-file-ngoai-repository
+    message: "[KT-1] Chỉ order-repository.ts được đọc/ghi file. Đi qua OrderRepository."
+    languages: [typescript, javascript]
+    severity: ERROR
+    metadata:
+      category: architecture
+    pattern-either:
+      - pattern: import $X from "node:fs"
+      - pattern: import $X from "fs"
+      - pattern: import $X from "node:fs/promises"
+      - pattern: import $X from "fs/promises"
+      - pattern: import "node:fs"
+      - pattern: require("node:fs")
+      - pattern: require("fs")
+    paths:
+      exclude:
+        - "src/features/orders/order-repository.ts"
+        - "*.test.ts"
+        - "*.test.tsx"

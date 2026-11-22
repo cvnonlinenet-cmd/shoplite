@@ -15,12 +15,13 @@ Checklist này được đọc từ **nhánh main**, không từ PR: PR không s
 
 ## 2. Bảo mật
 
-| Mã   | Mục kiểm được                                                                                                                                     | Ai kiểm              |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| BM-1 | Không dựng `RegExp` từ dữ liệu bên ngoài, **kể cả khi comment nói dữ liệu "đã được kiểm"**. Thử `q=tai(` (lỗi 500) và `q=(.*.*)*!` (treo server). | **lint** (gate) + AI |
-| BM-2 | Không chèn HTML thô (`dangerouslySetInnerHTML`).                                                                                                  | **lint** (gate)      |
-| BM-3 | Không có khoá, token, mật khẩu trong code, test, log hay lịch sử commit. Xóa ở commit sau **không đủ**: phải viết lại lịch sử và thu hồi khoá.    | **gitleaks** (gate)  |
-| BM-4 | Server tự kiểm mọi đầu vào (độ dài, số lượng, giá, trạng thái), không tin con số trình duyệt gửi lên.                                             | AI + người           |
+| Mã   | Mục kiểm được                                                                                                                                                                                    | Ai kiểm              |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------- |
+| BM-1 | Không dựng `RegExp` từ dữ liệu bên ngoài, **kể cả khi comment nói dữ liệu "đã được kiểm"**. Thử `q=tai(` (lỗi 500) và `q=(.*.*)*!` (treo server).                                                | **lint** (gate) + AI |
+| BM-2 | Không chèn HTML thô (`dangerouslySetInnerHTML`).                                                                                                                                                 | **lint** (gate)      |
+| BM-3 | Không có khoá, token, mật khẩu trong code, test, log hay lịch sử commit. Xóa ở commit sau **không đủ**: phải viết lại lịch sử và thu hồi khoá.                                                   | **gitleaks** (gate)  |
+| BM-4 | Server tự kiểm mọi đầu vào (độ dài, số lượng, giá, trạng thái), không tin con số trình duyệt gửi lên.                                                                                            | AI + người           |
+| BM-5 | Không chạy mã hay lệnh dựng từ chuỗi (`eval`, `new Function`, `child_process` với template string). Semgrep còn chạy bộ luật `p/typescript`, `p/react` ở mức ERROR; luật nhóm đặt ở `.semgrep/`. | **Semgrep** (gate)   |
 
 ## 3. Kiến trúc
 
