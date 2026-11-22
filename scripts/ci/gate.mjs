@@ -27,6 +27,12 @@ const BUOC = {
     ["npm audit", "npm audit --audit-level=high"],
     // SAST: luật của nhóm trong .semgrep/ (chạy offline) + bộ luật p/typescript, p/react của Semgrep registry.
     // Chỉ chặn ở mức ERROR; --metrics=off để không gửi gì ra ngoài. Phiên bản ghim trong ci.yml.
+    // Tự kiểm luật của nhóm bằng fixture .semgrep/shoplite.tsx (dòng "ruleid:" phải bị bắt, "ok:" phải không):
+    // luật hỏng thì gate đỏ ngay, không âm thầm xanh.
+    [
+      "Semgrep: kiểm luật của nhóm",
+      "semgrep --test --metrics=off --config .semgrep/shoplite.yml .semgrep/shoplite.tsx",
+    ],
     [
       "Semgrep (SAST)",
       "semgrep scan --config .semgrep --config p/typescript --config p/react --severity ERROR --error --metrics=off --quiet src",
@@ -101,7 +107,8 @@ function thieuGi(command) {
   if (script)
     return existsSync(script) ? null : { ten: `${script} (thêm ở bài 7.5)`, batBuoc: false };
   const CONG_CU = {
-    gitleaks: "gitleaks (macOS: brew install gitleaks · Windows: winget install --id Gitleaks.Gitleaks)",
+    gitleaks:
+      "gitleaks (macOS: brew install gitleaks · Windows: winget install --id Gitleaks.Gitleaks)",
     semgrep: "semgrep (macOS: brew install semgrep · Linux/Windows: pipx install semgrep==1.186.0)",
   };
   const tool = Object.keys(CONG_CU).find((ten) => command.startsWith(ten));

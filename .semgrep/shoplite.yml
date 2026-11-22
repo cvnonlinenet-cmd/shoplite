@@ -62,6 +62,10 @@ rules:
       - pattern: import $X from "fs"
       - pattern: import $X from "node:fs/promises"
       - pattern: import $X from "fs/promises"
+      - pattern: import * as $X from "node:fs"
+      - pattern: import * as $X from "fs"
+      - pattern: import * as $X from "node:fs/promises"
+      - pattern: import * as $X from "fs/promises"
       - pattern: import "node:fs"
       - pattern: require("node:fs")
       - pattern: require("fs")
