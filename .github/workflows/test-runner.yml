@@ -1,0 +1,22 @@
+# Thử runner tự dựng (bài 7.3): chỉ in thông tin máy chạy, không gọi AI.
+name: Test runner
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  thu-runner:
+    runs-on: ${{ vars.RUNNER_AI || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    steps:
+      - name: Thông tin máy chạy
+        run: |
+          echo "runner: $RUNNER_NAME"
+          echo "host: $(hostname) / $(uname -m)"
+          echo "node: $(node -v)"
+          echo "gh: $(gh --version | head -1)"
+          echo "claude: $(~/.local/bin/claude --version)"
+          echo "bun: $(~/.bun/bin/bun -v)"
