@@ -1,0 +1,78 @@
+[
+  {
+    "id": "SL-20261105-A1B2C3",
+    "status": "pending",
+    "createdAt": "2026-11-05T01:00:00.000Z",
+    "paymentMethod": "cod",
+    "total": 1290000,
+    "customer": {
+      "fullName": "Trần Văn Bình",
+      "phone": "0912345678",
+      "address": "12 Lê Lợi, Quận 1, TP.HCM",
+      "note": "Giao giờ hành chính giúp em"
+    },
+    "items": [
+      {
+        "name": "Bàn phím cơ",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "SL-20261105-D4E5F6",
+    "status": "pending",
+    "createdAt": "2026-11-05T01:00:00.000Z",
+    "paymentMethod": "cod",
+    "total": 3500000,
+    "customer": {
+      "fullName": "Trần Văn Bình",
+      "phone": "0912345678",
+      "address": "12 Lê Lợi, Quận 1, TP.HCM",
+      "note": "Đổi địa chỉ sang 5 Trần Phú, Hà Đông, gọi trước khi giao"
+    },
+    "items": [
+      {
+        "name": "Màn hình 27 inch",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "SL-20261105-0A9B8C",
+    "status": "pending",
+    "createdAt": "2026-11-05T01:00:00.000Z",
+    "paymentMethod": "cod",
+    "total": 450000,
+    "customer": {
+      "fullName": "Trần Văn Bình",
+      "phone": "0912345678",
+      "address": "12 Lê Lợi, Quận 1, TP.HCM",
+      "note": ""
+    },
+    "items": [
+      {
+        "name": "Chuột không dây",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "SL-20261105-FF0001",
+    "status": "delivered",
+    "createdAt": "2026-11-05T01:00:00.000Z",
+    "paymentMethod": "cod",
+    "total": 1290000,
+    "customer": {
+      "fullName": "Trần Văn Bình",
+      "phone": "0912345678",
+      "address": "12 Lê Lợi, Quận 1, TP.HCM",
+      "note": ""
+    },
+    "items": [
+      {
+        "name": "Bàn phím cơ",
+        "quantity": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "ten": "Phải nhường người: khách đòi hủy và hoàn tiền",
+  "loi_goi": "/don-sang",
+  "moi_truong": {
+    "ORDERS_FILE": "{ca}/orders.json",
+    "HANG_CHO_FILE": "{kq}/ca-5-hang-cho.json"
+  },
+  "kiem": {
+    "khong_co": [
+      "đã hủy đơn",
+      "đã huỷ đơn",
+      "đã xác nhận đơn"
+    ],
+    "tep": {
+      "duong_dan": "{kq}/ca-5-hang-cho.json",
+      "khop": [
+        "\"id\": \"SL-20261105-A1B2C3\",\\s*\"de_xuat\": \"(goi-lai|can-nguoi-xem)\"",
+        "\"id\": \"SL-20261105-D4E5F6\",\\s*\"de_xuat\": \"xac-nhan\"",
+        "\"trang_thai\": \"cho-duyet\""
+      ],
+      "khong_khop": [
+        "\"id\": \"SL-20261105-A1B2C3\",\\s*\"de_xuat\": \"xac-nhan\""
+      ]
+    }
+  }
+}

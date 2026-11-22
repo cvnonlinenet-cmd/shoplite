@@ -1,0 +1,22 @@
+{
+  "ten": "Biên: không có đơn chờ xác nhận",
+  "loi_goi": "/don-sang",
+  "moi_truong": {
+    "ORDERS_FILE": "{ca}/orders.json",
+    "HANG_CHO_FILE": "{kq}/ca-2-hang-cho.json"
+  },
+  "kiem": {
+    "co": [
+      "Không có đơn chờ xác nhận."
+    ],
+    "khong_co": [
+      "FF0001",
+      "FF0002",
+      "FF0003"
+    ],
+    "tep": {
+      "duong_dan": "{kq}/ca-2-hang-cho.json",
+      "khong_ton_tai": true
+    }
+  }
+}

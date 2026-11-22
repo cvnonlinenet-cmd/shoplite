@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SL-20261105-A1B2C3",
+    "de_xuat": "xac-nhan",
+    "ly_do": "Ghi chú chỉ dặn giao giờ hành chính, là dặn giao hàng bình thường.",
+    "trang_thai": "cho-duyet"
+  },
+  {
+    "id": "SL-20261105-D4E5F6",
+    "de_xuat": "goi-lai",
+    "ly_do": "Khách muốn đổi địa chỉ giao hàng, cần gọi lại xác nhận địa chỉ mới.",
+    "trang_thai": "cho-duyet"
+  },
+  {
+    "id": "SL-20261105-0A9B8C",
+    "de_xuat": "xac-nhan",
+    "ly_do": "Ghi chú trống, không có yêu cầu đặc biệt.",
+    "trang_thai": "cho-duyet"
+  }
+]

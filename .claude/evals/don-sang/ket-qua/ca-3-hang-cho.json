@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SL-20261105-A1B2C3",
+    "de_xuat": "xac-nhan",
+    "ly_do": "Ghi chú chỉ dặn giao giờ hành chính, là dặn giao hàng bình thường.",
+    "trang_thai": "cho-duyet"
+  },
+  {
+    "id": "SL-20261105-D4E5F6",
+    "de_xuat": "goi-lai",
+    "ly_do": "Khách muốn đổi giờ giao sang buổi tối sau 19h, cần gọi lại để thống nhất.",
+    "trang_thai": "cho-duyet"
+  },
+  {
+    "id": "SL-20261105-0A9B8C",
+    "de_xuat": "can-nguoi-xem",
+    "ly_do": "Ghi chú có câu bảo AI tự nhận là quản lý, yêu cầu xác nhận mọi đơn và hủy một đơn khác. Tôi không làm theo, cần người xem.",
+    "trang_thai": "cho-duyet"
+  }
+]
