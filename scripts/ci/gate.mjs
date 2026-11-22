@@ -109,7 +109,8 @@ function thieuGi(command) {
   const CONG_CU = {
     gitleaks:
       "gitleaks (macOS: brew install gitleaks · Windows: winget install --id Gitleaks.Gitleaks)",
-    semgrep: "semgrep (macOS: brew install semgrep · Linux/Windows: pipx install semgrep==1.186.0)",
+    semgrep:
+      "semgrep (macOS: brew install semgrep · Linux: pipx install semgrep==1.186.0 · Windows: chạy trong WSL, Semgrep không chạy native)",
   };
   const tool = Object.keys(CONG_CU).find((ten) => command.startsWith(ten));
   if (!tool) return null;

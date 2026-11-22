@@ -9,6 +9,10 @@ import * as fs from "fs";
 import { writeFile } from "node:fs/promises";
 // ruleid: shoplite.kt-1-doc-ghi-file-ngoai-repository
 const fsCu = require("fs");
+// ruleid: shoplite.kt-1-doc-ghi-file-ngoai-repository
+const fsPromises = require("fs/promises");
+// ruleid: shoplite.kt-1-doc-ghi-file-ngoai-repository
+const fsDong = import("node:fs/promises");
 import { exec, execSync } from "node:child_process";
 import { normalizeText } from "@/lib/format";
 
@@ -33,7 +37,19 @@ export function viDu(q: string, html: string) {
   // ok: shoplite.bm-5-chay-ma-dong
   execSync("git rev-parse HEAD");
 
-  return [hopLe, tuKhach, khongNew, dungCach, fn, fsCu, fs, readFileSync, writeFile];
+  return [
+    hopLe,
+    tuKhach,
+    khongNew,
+    dungCach,
+    fn,
+    fsCu,
+    fsPromises,
+    fsDong,
+    fs,
+    readFileSync,
+    writeFile,
+  ];
 }
 
 export function ThoHtml({ html }: { html: string }) {

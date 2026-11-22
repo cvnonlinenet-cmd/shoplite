@@ -67,8 +67,15 @@ rules:
       - pattern: import * as $X from "node:fs/promises"
       - pattern: import * as $X from "fs/promises"
       - pattern: import "node:fs"
+      - pattern: import "fs"
       - pattern: require("node:fs")
       - pattern: require("fs")
+      - pattern: require("node:fs/promises")
+      - pattern: require("fs/promises")
+      - pattern: import("node:fs")
+      - pattern: import("fs")
+      - pattern: import("node:fs/promises")
+      - pattern: import("fs/promises")
     paths:
       exclude:
         - "src/features/orders/order-repository.ts"

@@ -50,7 +50,7 @@ Mở <http://localhost:3000>.
 | `node scripts/ci/gate.mjs all` | 4 gate của CI ở máy: lint, unit, e2e, bao-mat (gitleaks + npm audit + Semgrep + soát workflow + quét câu mồi) |
 
 > Lần đầu chạy E2E cần cài trình duyệt: `npx playwright install chromium`
-> Gate `bao-mat` cần `gitleaks` và `semgrep` ở máy: `brew install gitleaks semgrep` (Windows: `winget install Gitleaks.Gitleaks`, `pipx install semgrep==1.186.0`). Luật SAST của nhóm nằm ở `.semgrep/shoplite.yml`, fixture tự kiểm ở `.semgrep/shoplite.tsx` (`semgrep --test`).
+> Gate `bao-mat` cần `gitleaks` và `semgrep` ở máy: `brew install gitleaks semgrep` (Linux: `pipx install semgrep==1.186.0`; Windows: `winget install Gitleaks.Gitleaks`, còn Semgrep không chạy native nên chạy gate trong WSL). Luật SAST của nhóm nằm ở `.semgrep/shoplite.yml`, fixture tự kiểm ở `.semgrep/shoplite.tsx` (`semgrep --test`).
 
 ## Cấu trúc thư mục
 
