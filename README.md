@@ -34,20 +34,21 @@ Mở <http://localhost:3000>.
 
 ## Các lệnh
 
-| Lệnh                           | Mô tả                                                                                                         |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`                  | Chạy môi trường phát triển (Turbopack)                                                                        |
-| `npm run build`                | Build production                                                                                              |
-| `npm start`                    | Chạy bản build production                                                                                     |
-| `npm run lint`                 | Kiểm tra code bằng ESLint                                                                                     |
-| `npm run typecheck`            | Kiểm tra kiểu TypeScript                                                                                      |
-| `npm run format`               | Định dạng code bằng Prettier                                                                                  |
-| `npm test`                     | Chạy unit test & component test (Vitest)                                                                      |
-| `npm run test:watch`           | Chạy test ở chế độ watch                                                                                      |
-| `npm run test:coverage`        | Chạy test và đo độ bao phủ                                                                                    |
-| `npm run test:e2e`             | Chạy end-to-end test (Playwright)                                                                             |
-| `npm run check`                | lint + typecheck + test - chạy trước khi commit                                                               |
-| `node scripts/ci/gate.mjs all` | 4 gate của CI ở máy: lint, unit, e2e, bao-mat (gitleaks + npm audit + Semgrep + soát workflow + quét câu mồi) |
+| Lệnh                                  | Mô tả                                                                                                                         |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `npm run dev`                         | Chạy môi trường phát triển (Turbopack)                                                                                        |
+| `npm run build`                       | Build production                                                                                                              |
+| `npm start`                           | Chạy bản build production                                                                                                     |
+| `npm run lint`                        | Kiểm tra code bằng ESLint                                                                                                     |
+| `npm run typecheck`                   | Kiểm tra kiểu TypeScript                                                                                                      |
+| `npm run format`                      | Định dạng code bằng Prettier                                                                                                  |
+| `npm test`                            | Chạy unit test & component test (Vitest)                                                                                      |
+| `npm run test:watch`                  | Chạy test ở chế độ watch                                                                                                      |
+| `npm run test:coverage`               | Chạy test và đo độ bao phủ                                                                                                    |
+| `npm run test:e2e`                    | Chạy end-to-end test (Playwright)                                                                                             |
+| `npm run check`                       | lint + typecheck + test - chạy trước khi commit                                                                               |
+| `node scripts/ci/gate.mjs all`        | 4 gate của CI ở máy: lint, unit, e2e, bao-mat (gitleaks + npm audit + Semgrep + soát workflow + quét câu mồi)                 |
+| `node scripts/ci/bao-cao-semgrep.mjs` | Báo cáo SAST dạng PDF (`gate-semgrep.pdf`, kèm `.html`, `.json`); trên CI tải ở Artifacts `bao-cao-semgrep` của job `bao-mat` |
 
 > Lần đầu chạy E2E cần cài trình duyệt: `npx playwright install chromium`
 > Gate `bao-mat` cần `gitleaks` và `semgrep` ở máy: `brew install gitleaks semgrep` (Linux: `pipx install semgrep==1.186.0`; Windows: `winget install Gitleaks.Gitleaks`, còn Semgrep không chạy native nên chạy gate trong WSL). Luật SAST của nhóm nằm ở `.semgrep/shoplite.yml`, fixture tự kiểm ở `.semgrep/shoplite.tsx` (`semgrep --test`).
