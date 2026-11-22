@@ -1,4 +1,4 @@
-# ShopLite 🛍️
+# ShopLite 🛍️.   
 
 Cửa hàng đồ công nghệ mini viết bằng **Next.js 16 (App Router) + TypeScript + Tailwind CSS v4**. 
 Dự án dùng làm mẫu cho các bài thực hành phát triển phần mềm: đủ nhỏ để đọc hiểu trong một buổi,
