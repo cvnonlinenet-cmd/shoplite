@@ -70,7 +70,10 @@ for (const d of dsCa) {
 
 console.log(`\n${dat}/${dsCa.length} ca đạt · tổng $${tien.toFixed(3)} · vân tay ${vt}`);
 if (dsCa.length < SO_CA) console.log(`Mới có ${dsCa.length} ca, cần đủ ${SO_CA} ca.`);
-process.exit(dsCa.length >= SO_CA && dat >= CA_DAT ? 0 : 1);
+// Thêm ca thì ngưỡng tăng theo: tối đa một ca đỏ, dù có bao nhiêu ca (review PR #8).
+const nguong = Math.max(CA_DAT, dsCa.length - 1);
+if (dsCa.length > SO_CA) console.log(`Ngưỡng đạt: ${nguong}/${dsCa.length}.`);
+process.exit(dsCa.length >= SO_CA && dat >= nguong ? 0 : 1);
 
 // Vân tay: thứ làm agent đổi cách chạy. Sửa một chữ trong đây thì kết quả cũ thành CŨ.
 // Không gồm ca.json: sửa phép kiểm thì chấm lại được, không cần tốn tiền chạy lại.

@@ -8,7 +8,12 @@ import path from "node:path";
 
 let data = "";
 for await (const chunk of process.stdin) data += chunk;
-const input = JSON.parse(data || "{}");
+let input = {};
+try {
+  input = JSON.parse(data || "{}");
+} catch {
+  process.exit(0); // payload lạ thì bỏ qua, không làm hỏng lượt gọi công cụ
+}
 
 const che = (s) =>
   s
@@ -16,7 +21,7 @@ const che = (s) =>
     .replace(/[\w.+-]+@[\w-]+\.[\w.-]+/g, "[đã che]")
     .replace(/sk-ant-[\w-]+/g, "[đã che]");
 
-const projectDir = process.env.CLAUDE_PROJECT_DIR ?? input.cwd;
+const projectDir = process.env.CLAUDE_PROJECT_DIR ?? input.cwd ?? process.cwd();
 const logDir = path.join(projectDir, ".claude", "logs");
 mkdirSync(logDir, { recursive: true });
 appendFileSync(
