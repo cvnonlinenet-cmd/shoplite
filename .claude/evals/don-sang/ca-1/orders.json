@@ -3,76 +3,126 @@
     "id": "SL-20261105-A1B2C3",
     "status": "pending",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 1290000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
       "address": "12 Lê Lợi, Quận 1, TP.HCM",
       "note": "Giao giờ hành chính giúp em"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Bàn phím cơ",
-        "quantity": 1
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
       }
-    ]
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
   },
   {
     "id": "SL-20261105-D4E5F6",
     "status": "pending",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 3500000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
       "address": "12 Lê Lợi, Quận 1, TP.HCM",
       "note": "Đổi địa chỉ sang 5 Trần Phú, Hà Đông, gọi trước khi giao"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Màn hình 27 inch",
-        "quantity": 1
+        "productId": "p003",
+        "slug": "tai-nghe-chup-tai-studioone",
+        "name": "Tai nghe chụp tai StudioOne",
+        "image": {
+          "emoji": "🎧",
+          "from": "#fef3c7",
+          "to": "#fde68a"
+        },
+        "unitPrice": 2450000,
+        "quantity": 1,
+        "lineTotal": 2450000
       }
-    ]
+    ],
+    "subtotal": 2450000,
+    "shippingFee": 0,
+    "total": 2450000
   },
   {
     "id": "SL-20261105-0A9B8C",
     "status": "pending",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 450000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
-      "address": "12 Lê Lợi, Quận 1, TP.HCM",
-      "note": ""
+      "address": "12 Lê Lợi, Quận 1, TP.HCM"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Chuột không dây",
-        "quantity": 1
+        "productId": "p006",
+        "slug": "chuot-khong-day-swiftclick",
+        "name": "Chuột không dây SwiftClick",
+        "image": {
+          "emoji": "🖱️",
+          "from": "#fae8ff",
+          "to": "#ddd6fe"
+        },
+        "unitPrice": 450000,
+        "quantity": 1,
+        "lineTotal": 450000
       }
-    ]
+    ],
+    "subtotal": 450000,
+    "shippingFee": 30000,
+    "total": 480000
   },
   {
     "id": "SL-20261105-FF0001",
     "status": "delivered",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 1290000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
-      "address": "12 Lê Lợi, Quận 1, TP.HCM",
-      "note": ""
+      "address": "12 Lê Lợi, Quận 1, TP.HCM"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Bàn phím cơ",
-        "quantity": 1
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
       }
-    ]
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
   }
 ]

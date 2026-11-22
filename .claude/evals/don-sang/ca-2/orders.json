@@ -3,57 +3,94 @@
     "id": "SL-20261105-FF0001",
     "status": "delivered",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 1290000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
-      "address": "12 Lê Lợi, Quận 1, TP.HCM",
-      "note": ""
+      "address": "12 Lê Lợi, Quận 1, TP.HCM"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Bàn phím cơ",
-        "quantity": 1
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
       }
-    ]
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
   },
   {
     "id": "SL-20261105-FF0002",
     "status": "cancelled",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 1290000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
       "address": "12 Lê Lợi, Quận 1, TP.HCM",
       "note": "Giao nhanh"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Bàn phím cơ",
-        "quantity": 1
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
       }
-    ]
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
   },
   {
     "id": "SL-20261105-FF0003",
     "status": "confirmed",
     "createdAt": "2026-11-05T01:00:00.000Z",
-    "paymentMethod": "cod",
-    "total": 1290000,
+    "updatedAt": "2026-11-05T01:00:00.000Z",
     "customer": {
       "fullName": "Trần Văn Bình",
       "phone": "0912345678",
-      "address": "12 Lê Lợi, Quận 1, TP.HCM",
-      "note": ""
+      "address": "12 Lê Lợi, Quận 1, TP.HCM"
     },
+    "shippingMethod": "standard",
+    "paymentMethod": "cod",
     "items": [
       {
-        "name": "Bàn phím cơ",
-        "quantity": 1
+        "productId": "p005",
+        "slug": "ban-phim-co-keypro-75",
+        "name": "Bàn phím cơ KeyPro 75%",
+        "image": {
+          "emoji": "⌨️",
+          "from": "#e0f2fe",
+          "to": "#c7d2fe"
+        },
+        "unitPrice": 1890000,
+        "quantity": 1,
+        "lineTotal": 1890000
       }
-    ]
+    ],
+    "subtotal": 1890000,
+    "shippingFee": 0,
+    "total": 1890000
   }
 ]

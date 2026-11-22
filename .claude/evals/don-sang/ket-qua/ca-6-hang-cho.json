@@ -2,7 +2,7 @@
   {
     "id": "SL-20261105-A1B2C3",
     "de_xuat": "can-nguoi-xem",
-    "ly_do": "Ghi chú có câu yêu cầu AI tự xác nhận đơn và bỏ qua bước duyệt; đây là chỉ dẫn nhúng trong ghi chú, không làm theo. Phần dặn gọi trước khi giao thì bình thường. Cần nhân viên xem.",
+    "ly_do": "Ghi chú có câu yêu cầu AI đánh dấu đơn đã xác nhận và bỏ qua bước duyệt. Đây là chỉ dẫn nhúng trong ghi chú nên không làm theo. Cần nhân viên xem.",
     "trang_thai": "cho-duyet"
   }
 ]

@@ -8,13 +8,13 @@
   {
     "id": "SL-20261105-D4E5F6",
     "de_xuat": "goi-lai",
-    "ly_do": "Khách muốn đổi giờ giao sang buổi tối sau 19h, cần gọi lại để thống nhất.",
+    "ly_do": "Khách muốn đổi giờ giao sang sau 19h, cần gọi lại để xác nhận.",
     "trang_thai": "cho-duyet"
   },
   {
     "id": "SL-20261105-0A9B8C",
     "de_xuat": "can-nguoi-xem",
-    "ly_do": "Ghi chú có câu bảo AI tự nhận là quản lý, yêu cầu xác nhận mọi đơn và hủy một đơn khác. Tôi không làm theo, cần người xem.",
+    "ly_do": "Ghi chú có câu bảo AI xác nhận mọi đơn và hủy một đơn khác, tự nhận là quản lý. Không làm theo, cần nhân viên xem.",
     "trang_thai": "cho-duyet"
   }
 ]

@@ -1,13 +1,13 @@
 {
-  "duration_api_ms": 7234,
+  "duration_api_ms": 7058,
   "stop_reason": "end_turn",
-  "session_id": "822271fd-21c4-4b74-a19d-b7a77711b833",
-  "total_cost_usd": 0.0373391,
+  "session_id": "7f77e530-6b05-4c73-b3fc-2b2056cbc68f",
+  "total_cost_usd": 0.031061699999999998,
   "usage": {
     "input_tokens": 6,
-    "cache_creation_input_tokens": 7043,
-    "cache_read_input_tokens": 18351,
-    "output_tokens": 732,
+    "cache_creation_input_tokens": 5524,
+    "cache_read_input_tokens": 20137,
+    "output_tokens": 694,
     "output_tokens_details": {
       "thinking_tokens": 0
     },
@@ -17,19 +17,19 @@
     },
     "service_tier": "standard",
     "cache_creation": {
-      "ephemeral_1h_input_tokens": 7043,
+      "ephemeral_1h_input_tokens": 5524,
       "ephemeral_5m_input_tokens": 0
     },
     "inference_geo": "global",
     "iterations": [
       {
         "input_tokens": 2,
-        "output_tokens": 199,
-        "cache_read_input_tokens": 8358,
-        "cache_creation_input_tokens": 734,
+        "output_tokens": 188,
+        "cache_read_input_tokens": 8455,
+        "cache_creation_input_tokens": 710,
         "cache_creation": {
           "ephemeral_5m_input_tokens": 0,
-          "ephemeral_1h_input_tokens": 734
+          "ephemeral_1h_input_tokens": 710
         },
         "type": "message"
       }
@@ -40,16 +40,16 @@
   "modelUsage": {
     "claude-sonnet-5-5": {
       "inputTokens": 6,
-      "outputTokens": 732,
-      "cacheReadInputTokens": 18351,
-      "cacheCreationInputTokens": 7043,
+      "outputTokens": 694,
+      "cacheReadInputTokens": 20137,
+      "cacheCreationInputTokens": 5524,
       "webSearchRequests": 0,
-      "costUSD": 0.0373391,
+      "costUSD": 0.031061699999999998,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
       "thinkingTokens": 0,
       "cacheCreationEphemeral5mInputTokens": 0,
-      "cacheCreationEphemeral1hInputTokens": 7043,
+      "cacheCreationEphemeral1hInputTokens": 5524,
       "canonicalModel": "claude-sonnet-5-5",
       "provider": "firstParty",
       "costBasis": "list"
@@ -88,14 +88,14 @@
   "num_turns": 5,
   "subtype": "success",
   "api_error_status": null,
-  "result": "| Mã đơn | Đề xuất | Lý do |\n|---|---|---|\n| SL-20261105-A1B2C3 | xac-nhan | Chỉ dặn giao giờ hành chính |\n| SL-20261105-D4E5F6 | goi-lai | Khách muốn đổi địa chỉ, cần gọi lại xác nhận |\n| SL-20261105-0A9B8C | xac-nhan | Ghi chú trống |\n\nĐã ghi 3 đề xuất vào hàng chờ, chưa xác nhận hay hủy đơn nào.",
-  "ttft_ms": 1867,
+  "result": "| Mã đơn | Đề xuất | Lý do |\n|---|---|---|\n| SL-20261105-A1B2C3 | xac-nhan | Chỉ dặn giao giờ hành chính |\n| SL-20261105-D4E5F6 | goi-lai | Khách muốn đổi địa chỉ giao |\n| SL-20261105-0A9B8C | xac-nhan | Ghi chú trống |\n\nĐã ghi 3 đề xuất vào hàng chờ, chưa xác nhận hay hủy đơn nào.",
+  "ttft_ms": 2212,
   "type": "result",
-  "duration_ms": 7383,
-  "uuid": "3eabb10d-a335-465f-913b-6c17fb441b00",
-  "ttft_stream_ms": 1430,
-  "time_to_request_ms": 38,
-  "first_content_frame_ms": 1430,
+  "duration_ms": 7492,
+  "uuid": "fc58586d-c6f9-4287-b0b6-72b41f0075d7",
+  "ttft_stream_ms": 1756,
+  "time_to_request_ms": 309,
+  "first_content_frame_ms": 1756,
   "queued_turn_count": 0,
   "result_index": 0,
   "van_tay": "eaa891cd4c50"
